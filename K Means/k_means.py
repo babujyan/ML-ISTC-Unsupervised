@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class KMeans:
     def __init__(self, k):
         self.k = k
@@ -23,9 +24,6 @@ class KMeans:
                  0 <= labels[i] <= k - 1
         """
         pass
-
-    def euclideanDistance(data1, data2):
-        return np.sum((data1-data2)**2)**0.5
 
 
 def KMeansPlusPlus(KMeans):
