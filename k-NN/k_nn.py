@@ -25,11 +25,15 @@ class K_NN:
         :param data: 2D array of floats N points each D dimensions
         :return: array of integers
         """
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7849db380755f8e4c745bb74da70fdfe4222b8a6
         data = np.array(data)
         shp = data.shape
         if len(data.shape) == 1:
             data = data.reshape([1] + list(data.shape))
+<<<<<<< HEAD
 
         distance = {}
         s = []
@@ -49,3 +53,8 @@ class K_NN:
 
     def euclideanDistance(data1, data2):
         return np.sum((data1-data2)**2)**0.5
+=======
+        # TODO: predict
+        prediction = np.array([0])
+        return prediction.reshape(shp[:-1])
+>>>>>>> 7849db380755f8e4c745bb74da70fdfe4222b8a6
