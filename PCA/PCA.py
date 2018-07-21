@@ -13,7 +13,14 @@ class PCA:
         :param data: data of shape (number of samples, number of features)
         HINT! use SVD
         """
-        pass
+        data = data / np.linalg.norm(data, axis=0)
+        mean_ = np.mean(data, axis=0)
+        data -= mean_
+        #         cov_matix = np.cov(data.T.dot(data))
+        #         w , v  = np.linalg.eig(cov_matix)
+
+        u, s, v = np.linalg.svd(data, full_matrices=False)
+        self.matrix_ = v[:self.k]
 
     def transform(self, data):
         """
@@ -25,4 +32,5 @@ class PCA:
         """
         # Lemma: x is vector and A dot A.T == I, then x's coordinates in Linear Space(A's rows as basis)
         # is A dot x
-        return np.ones((len(data), self.k))
+
+        return np.dot(self.matrix_, data.T).T
