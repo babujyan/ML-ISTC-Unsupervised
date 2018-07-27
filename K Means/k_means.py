@@ -9,13 +9,16 @@ class KMeans:
         """
         :param data: numpy array of shape (k, ..., dims)
         """
+        data = 
         self.dim = data.shape[-1]
         self._initialize_means(data)
         # TODO: Initialize Mixtures, then run EM algorithm until it converges.
 
+
+
     def _initialize_means(self, data):
         # TODO: Initialize cluster centers
-        pass
+        self.dim
 
     def predict(self, data):
         """
