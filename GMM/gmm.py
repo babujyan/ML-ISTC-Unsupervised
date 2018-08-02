@@ -21,7 +21,7 @@ class GMM:
 
     def _initialize_params(self, data):
         # TODO: initialize means, covariances, pis
-        pass
+        self.pis 
 
     def _E_step(data):
         # TODO: find gammas from means, covariances, pis

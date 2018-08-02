@@ -32,19 +32,21 @@ class K_NN:
             data = data.reshape([1] + list(data.shape))
 
         distance = {}
+        prediction = []
         s = []
         for datapoint in data:
             for i in range(self.data.shape[0]):
 
                 for data1 in self.data[i]:
-                    s.append([K_NN.euclideanDistance(data1,datapoint),i])
+                    s.append([self.euclideanDistance(data1,datapoint),i])
 
 
             s = sorted(s)
             a = np.array(s[0:self.k])
             unique , counts =np.unique(a[:,1],return_counts =True)
-            max = np.argmax(counts)
-            prediction = unique[max]
+            m = np.argmax(counts)
+            prediction.append(unique[m])
+        prediction = np.array(prediction)
         return prediction.reshape(shp[:-1])
 
     def euclideanDistance(data1, data2):
